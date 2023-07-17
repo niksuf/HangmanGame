@@ -61,7 +61,7 @@ def run_main_game(word, hangman_pics):
     session_running = True
 
     while run_game and session_running:
-        print('\033[0;34m' + hangman_pics[len(hangman_pics) - lives_left - 1] + '\n\033[0;30m')
+        print('\033[0;34m' + hangman_pics[len(hangman_pics) - lives_left - 1] + '\n\033[0m')
         print(f"Загадано слово из {len(word)} букв. Вы угадали {len(guessed_letters)} букв. "
               f"Осталось {lives_left} жизней\n")
 
@@ -80,6 +80,7 @@ def run_main_game(word, hangman_pics):
             session_running = False
         if lives_left == 0:
             print(f'\033[1mК сожалению, вы проиграли\n\033[0m')
+            print('\033[0;34m' + hangman_pics[len(hangman_pics) - 1] + '\n\033[0m')
             session_running = False
 
 
